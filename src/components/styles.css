@@ -1,0 +1,46 @@
+.Selector{
+    background-color:lightgreen;
+    border-style:none;
+}
+
+select:focus > option:checked { 
+    background: rgb(255, 255, 255) !important;
+}
+
+#plus{
+    background-color:rgb(29, 167, 29);
+    display:flex;
+    height:30px;
+    width:30px; 
+    border:none;
+    border-radius:50%;
+    justify-content: center;
+    text-align:center; 
+}
+#plusText{
+    color:white;
+    text-align: center;
+    font-weight:bold;
+    font-size:50px;
+    margin-top:-30px;
+    
+}
+
+#minus{
+    background-color:rgb(167, 29, 29);
+    display:flex;
+    height:30px;
+    width:30px; 
+    border:none;
+    border-radius:50%;
+    justify-content: center;
+    text-align:center; 
+}
+#minusText{
+    color:white;
+    text-align: center;
+    font-weight:bold;
+    font-size:50px;
+    margin-top:-30px;
+    
+}

@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 const Budget = () => {
-    const { budget,expenses } = useContext(AppContext);
+    const { budget,expenses,currency } = useContext(AppContext);
     const {dispatch} = useContext(AppContext);
 
     const totalExpenses = expenses.reduce((total, item) => {
         return (total += item.cost);
     }, 0);
+
 
     const submitEvent = (event) => {
 
@@ -19,9 +20,9 @@ const Budget = () => {
             });
             alert("Budget Cannot exceed 20,000");
         }
-        else if(value < 10){
+        else if(budget < value){
             console.log()
-            alert("You cannot reduct the budget value lower than the spending value.")
+            alert("You cannot reduce the budget value lower than the spending value.")
         }
         else{
             dispatch({
@@ -36,7 +37,7 @@ const Budget = () => {
 
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £</span>
+            <span>Budget: {currency}</span>
             <input
             required = 'required'
             value = {budget}
